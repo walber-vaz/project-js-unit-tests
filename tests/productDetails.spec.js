@@ -31,13 +31,39 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
+    // fail('Teste vazio!');
     // ESCREVA SEUS TESTES ABAIXO:
+    const isArray = productDetails('Alcool gel', 'Máscara');
     // Teste se productDetails é uma função.
+    expect(typeof productDetails).toBe('function');
     // Teste se o retorno da função é um array.
+    expect(typeof isArray).toBe('object');
     // Teste se o array retornado pela função contém dois itens dentro.
+    expect(isArray.length).toBe(2);
     // Teste se os dois itens dentro do array retornado pela função são objetos.
+    const isObjectOne = isArray[0];
+    const isObjectTwo = isArray[1];
+    expect(typeof isObjectOne).toBe('object');
+    expect(typeof isObjectTwo).toBe('object');
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
+    const isEqual = [
+      { 
+        name: 'Alcool gel',
+        details: { 
+          productId: 'Alcool gel123'
+        },
+      },
+      { 
+        name: 'Máscara',
+        details: {
+            productId: 'Máscara123'
+        }
+      }
+    ];
+    expect(isArray).toEqual(isEqual);
     // Teste se os dois productIds terminam com 123.
+    const proOne = String(isArray[0].details.productId);
+    const prodTwo = String(isArray[1].details.productId);
+    expect(proOne.endsWith('123')).toEqual(prodTwo.endsWith('123'));
   });
 });
