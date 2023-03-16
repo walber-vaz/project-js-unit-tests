@@ -28,6 +28,6 @@
   "homepage": "https://github.com/betrybe/sd-0x-block8-project-js-unit-test#readme",
   "devDependencies": {
     "eslint-config-trybe-fundamentals": "1.1.1",
-    "jest": "24.9.0"
+    "jest": "29.5.0"
   }
 }
